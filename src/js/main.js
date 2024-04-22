@@ -1,6 +1,6 @@
 window.addEventListener('load',()=>{
     const playerOne = 'X';
-    const playerTwo = '0';
+    const playerTwo = '1';
     let turn = playerOne;
     const game = [
         [null, null, null],
@@ -26,32 +26,51 @@ window.addEventListener('load',()=>{
         const isWinnerDiagonalOne = [game[0][0], game[1][1], game[2][2]].every(item => item === game[0][0]);
         const isWinnerDiagonalTwo = [game[0][2], game[1][1], game[2][0]].every(item => item === game[0][2]);
         if (isWinnerRowOne || isWinnerColOne || isWinnerDiagonalOne) {
-            //alert(`Player ${game[0][0]} Wins`);
-            alert('1');
+            if (game[0][0] == 0) {
+                alert(`Player ${playerOne} Wins`);
+            } else {
+                alert(`Player ${playerTwo} Wins`);
+            }
             window.location.reload();
             return;
+            
         }
         if (isWinnerRowTwo) {
-            //alert(`Player ${game[1][0]} Wins`);
-            alert('2');
+            if (game[1][0] == 0) {
+                alert(`Player ${playerOne} Wins`);
+            } else {
+                alert(`Player ${playerTwo} Wins`);
+            }
             window.location.reload();
             return;
+            
         }
         if (isWinnerRowThree) {
-            //alert(`Player ${game[2][0]} Wins`);
-            alert('3');
+            if (game[2][0] == 0) {
+                alert(`Player ${playerOne} Wins`);
+            } else {
+                alert(`Player ${playerTwo} Wins`);
+            }
             window.location.reload();
             return;
+            
         }
         if (isWinnerColTwo) {
-            //alert(`Player ${game[0][1]} Wins`);
-            alert('4');
+            if (game[0][1] == 0) {
+                alert(`Player ${playerOne} Wins`);
+            } else {
+                alert(`Player ${playerTwo} Wins`);
+            }
             window.location.reload();
             return;
+            
         }
         if (isWinnerColThree || isWinnerDiagonalTwo) {
-            //alert(`Player ${game[0][2]} Wins`);
-            alert('5');
+            if (game[2][0] == 0) {
+                alert(`Player ${playerOne} Wins`);
+            } else {
+                alert(`Player ${playerTwo} Wins`);
+            }
             window.location.reload();
             return;
         }}
