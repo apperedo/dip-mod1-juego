@@ -14,7 +14,12 @@ window.addEventListener('load',()=>{
         const cp_boxes = [...game].flat(Infinity);
         const isTotal = cp_boxes.every(box => box !== null);
         return isTotal;
-    }
+        //if ( isWinnerRowOne == true || isWinnerRowTwo == true || isWinnerRowThree == true
+            //|| isWinnerColOne == true || isWinnerColTwo == true || isWinnerColThree == true
+            //|| isWinnerDiagonalOne == true || isWinnerDiagonalTwo == true){
+              //  return;
+            }
+    //}
     
     const checkWinner = () => {
         const isWinnerRowOne = [game[0][0], game[0][1], game[0][2]].every(item => item === game[0][0]);
@@ -73,7 +78,9 @@ window.addEventListener('load',()=>{
             }
             window.location.reload();
             return;
-        }}
+        }
+        else alert("Game over");
+    }
 
     boxes.forEach((box) => {
         box.addEventListener('click', () => {
